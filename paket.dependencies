@@ -1,5 +1,6 @@
 source https://api.nuget.org/v3/index.json
 
+nuget FAKE
 nuget FSharp.Core
 nuget System.ValueTuple 4.3.1 restriction: >= net461
 nuget Elmish.WPF
