@@ -11,7 +11,7 @@ module Models =
         | High
 
     type Item = 
-        { Name: string; priority: Priority }
+        { Description: string; Priority: Priority; Completed: bool }
 
     type Model = { Title: string; Items: Item list }
 
@@ -23,17 +23,24 @@ module Models =
 module State = 
     open Models
 
-    let init() = { Title= ""; Items= list.Empty }
+    let init() = { 
+        Title = "" 
+        Items = 
+            [ { Description = "Task 1"; Priority = Priority.Low; Completed = false }
+              { Description = "Task 2"; Priority = Priority.Medium; Completed = true }
+              { Description = "Task 3"; Priority = Priority.High; Completed = true } ]
+    }
 
     let update (msg:Msg) (model:Model) =
         match msg with
         | Add item -> { model with Items = item :: model.Items }
         | Remove item -> model
         | Update (oldItem, newItem) -> model
-
+    
     let view _ _ = 
-        [ "Add" |> Binding.cmd (fun _ m -> Add { Name = "test"; priority=Priority.Medium })
-          "Remove" |> Binding.cmd (fun _ m -> Remove { Name = "test"; priority=Priority.Medium } ) ]
+        [ "Add" |> Binding.cmd (fun _ m -> Add { Description = "test"; Priority=Priority.Medium; Completed = false })
+          "Remove" |> Binding.cmd (fun _ m -> Remove { Description = "test"; Priority=Priority.Medium; Completed = false } ) 
+          "Items" |> Binding.oneWay (fun m -> m.Items)]
 
 module App =
     open State

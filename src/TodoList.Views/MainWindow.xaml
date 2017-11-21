@@ -6,6 +6,36 @@
         xmlns:local="clr-namespace:TodoList.Views"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
-    <Grid>
+    <Grid HorizontalAlignment="Stretch">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        
+        <ListView Grid.Row="0" ItemsSource="{Binding Items}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Description" DisplayMemberBinding="{Binding Description}"/>
+                    <GridViewColumn Header="Priority" DisplayMemberBinding="{Binding Priority}"/>
+                    <GridViewColumn Header="Completed" x:Name="CheckBoxColumn" Width="125">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Grid Width="{Binding ElementName=CheckBoxColumn, Path=Width}">
+                                    <CheckBox HorizontalAlignment="Center" IsChecked="{Binding Completed, Mode=OneWay}" />
+                                </Grid>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+
+            <!--<ListView.ItemTemplate>
+                <DataTemplate>
+                    <local:Item/>
+                </DataTemplate>
+            </ListView.ItemTemplate>-->
+        </ListView>
+
+        <Button Grid.Row="1" Content="Add" />
     </Grid>
 </Window>
