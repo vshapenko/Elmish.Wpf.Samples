@@ -1,23 +1,35 @@
-﻿<Window x:Class="TodoList.Views.MainWindow"
+﻿<Controls:MetroWindow x:Class="TodoList.Views.MainWindow"
+        xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TodoList.Views"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="Todo List" Height="350" Width="525">
+    <Controls:MetroWindow.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colors.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Blue.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseDark.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Controls:MetroWindow.Resources>
     <Grid HorizontalAlignment="Stretch">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        
-        <ListView Grid.Row="0" ItemsSource="{Binding Items}">
+
+        <ListView Grid.Row="0" ItemsSource="{Binding Items}" Margin="30,30,30,30">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Description" DisplayMemberBinding="{Binding Description}"/>
-                    <GridViewColumn Header="Priority" DisplayMemberBinding="{Binding Priority}"/>
-                    <GridViewColumn Header="Completed" x:Name="CheckBoxColumn" Width="125">
+                    <GridViewColumn Header="Description" DisplayMemberBinding="{Binding Description}" Width="250"/>
+                    <GridViewColumn Header="Priority" DisplayMemberBinding="{Binding Priority}" Width="80"/>
+                    <GridViewColumn Header="Completed" x:Name="CheckBoxColumn" Width="100">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <Grid Width="{Binding ElementName=CheckBoxColumn, Path=Width}">
@@ -38,4 +50,4 @@
 
         <Button Grid.Row="1" Content="Add" />
     </Grid>
-</Window>
+</Controls:MetroWindow>

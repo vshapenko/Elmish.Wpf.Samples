@@ -1,3 +1,4 @@
-System.ValueTuple
-FSharp.Core
 Elmish.WPF
+FSharp.Core
+MahApps.Metro
+System.ValueTuple
