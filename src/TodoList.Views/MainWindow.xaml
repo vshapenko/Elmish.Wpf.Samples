@@ -6,7 +6,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TodoList.Views"
         mc:Ignorable="d"
-        Title="Todo List" Height="350" Width="525">
+        Title="Todo List" Height="600" Width="600"
+        SaveWindowPosition="True">
     <Controls:MetroWindow.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -27,7 +28,15 @@
         <ListView Grid.Row="0" ItemsSource="{Binding Items}" Margin="30,30,30,30">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Description" DisplayMemberBinding="{Binding Description}" Width="250"/>
+                    <GridViewColumn Header="Description" x:Name="DescriptionColumn" Width="355">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Grid Width="{Binding ElementName=DescriptionColumn, Path=Width}">
+                                    <TextBox Text="{Binding Description, Mode=OneWay}" BorderThickness="0,0,0,0"/>
+                                </Grid>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
                     <GridViewColumn Header="Priority" DisplayMemberBinding="{Binding Priority}" Width="80"/>
                     <GridViewColumn Header="Completed" x:Name="CheckBoxColumn" Width="100">
                         <GridViewColumn.CellTemplate>
@@ -40,14 +49,8 @@
                     </GridViewColumn>
                 </GridView>
             </ListView.View>
-
-            <!--<ListView.ItemTemplate>
-                <DataTemplate>
-                    <local:Item/>
-                </DataTemplate>
-            </ListView.ItemTemplate>-->
         </ListView>
 
-        <Button Grid.Row="1" Content="Add" />
+        <Button Grid.Row="1" Content="Add" Width="100"/>
     </Grid>
 </Controls:MetroWindow>
