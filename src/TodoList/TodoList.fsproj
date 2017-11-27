@@ -58,7 +58,7 @@
     <Content Include="paket.references" />
     <Compile Include="AssemblyInfo.fs" />
     <Compile Include="TodoList.fs" />
-    <Resource Include="App.xaml" />
+    <Resource Include="MainWindow.xaml" />
     <Compile Include="App.fs" />
   </ItemGroup>
   <ItemGroup>
