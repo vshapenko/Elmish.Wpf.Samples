@@ -26,6 +26,7 @@ NUGET
       System.Threading.Thread (>= 4.0) - restriction: && (< net45) (>= netstandard1.6)
       System.Threading.ThreadPool (>= 4.0.10) - restriction: && (< net45) (>= netstandard1.6)
       System.Threading.Timer (>= 4.0.1) - restriction: && (< net45) (>= netstandard1.6)
+    FsXaml.Wpf (3.1.6)
     MahApps.Metro (1.5)
     Microsoft.NETCore.Platforms (2.0.1) - restriction: || (&& (>= dnxcore50) (>= netstandard1.6)) (&& (< monoandroid) (< net45) (< netstandard1.2) (>= netstandard1.6)) (&& (< monoandroid) (< net45) (< netstandard1.3) (>= netstandard1.6)) (&& (< monoandroid) (< net45) (< netstandard1.5) (>= netstandard1.6)) (&& (< monoandroid) (< netstandard1.1) (>= netstandard1.6)) (&& (< monotouch) (< net45) (>= netstandard1.6) (< xamarinios) (< xamarinmac) (< xamarintvos) (< xamarinwatchos)) (>= netcoreapp2.0)
     Microsoft.NETCore.Targets (2.0) - restriction: || (&& (>= dnxcore50) (>= netstandard1.6)) (&& (< monoandroid) (< net45) (< netstandard1.2) (>= netstandard1.6)) (&& (< monoandroid) (< net45) (< netstandard1.3) (>= netstandard1.6)) (&& (< monoandroid) (< net45) (< netstandard1.5) (>= netstandard1.6)) (&& (< monoandroid) (< netstandard1.1) (>= netstandard1.6)) (&& (< monotouch) (< net45) (>= netstandard1.6) (< xamarinios) (< xamarinmac) (< xamarintvos) (< xamarinwatchos))

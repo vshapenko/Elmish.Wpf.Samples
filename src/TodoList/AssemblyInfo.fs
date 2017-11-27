@@ -1,4 +1,4 @@
-﻿namespace App.AssemblyInfo
+﻿namespace Elmish.Wpf.App.AssemblyInfo
 
 open System.Reflection
 open System.Runtime.CompilerServices

@@ -4,9 +4,9 @@ open Fake
 
 let buildDir = "./build/"
 
-Target "Build" (fun _ ->
+Target "Debug" (fun _ ->
   !! "All.sln"
-      |> MSBuildRelease buildDir "Build"
+      |> MSBuildDebug (buildDir + "debug") "Build"
       |> Log "Build-Output: "
 )
 
@@ -14,12 +14,9 @@ Target "Clean" (fun _ ->
     CleanDir buildDir
 )
 
-Target "All" DoNothing
-
 // dependencies
 "Clean"
-  ==> "Build"
-  ==> "All"
+  ==> "Debug"
 
 // start build
-RunTargetOrDefault "All"
+RunTargetOrDefault "Debug"

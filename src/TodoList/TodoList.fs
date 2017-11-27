@@ -1,10 +1,6 @@
-﻿namespace TodoList
+﻿module TodoList
+    open Elmish.WPF
 
-open System
-open Elmish
-open Elmish.WPF
-
-module Models =
     type Priority =
         | Low
         | Medium
@@ -19,9 +15,6 @@ module Models =
         | Add of Item
         | Remove of Item
         | Update of oldItem: Item * newItem: Item
-
-module State = 
-    open Models
 
     let init() = { 
         Title = "" 
@@ -41,11 +34,3 @@ module State =
         [ "Add" |> Binding.cmd (fun _ m -> Add { Description = "test"; Priority=Priority.Medium; Completed = false })
           "Remove" |> Binding.cmd (fun _ m -> Remove { Description = "test"; Priority=Priority.Medium; Completed = false } ) 
           "Items" |> Binding.oneWay (fun m -> m.Items)]
-
-module App =
-    open State
-
-    [<EntryPoint;STAThread>]
-    let main argv = 
-        Program.mkSimple init update view
-        |> Program.runWindow (TodoList.Views.MainWindow())

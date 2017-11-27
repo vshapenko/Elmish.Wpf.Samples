@@ -3,5 +3,6 @@ source https://api.nuget.org/v3/index.json
 nuget Elmish.WPF
 nuget FAKE
 nuget FSharp.Core
+nuget FsXaml.Wpf
 nuget MahApps.Metro
 nuget System.ValueTuple 4.3.1 restriction: >= net461
