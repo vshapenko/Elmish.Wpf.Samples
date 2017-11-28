@@ -1,21 +1,26 @@
-﻿module TodoList
-    open Elmish.WPF
+﻿namespace TodoList
 
-    type Priority =
-        | Low
-        | Medium
-        | High
+open FsXaml
+open Elmish.WPF
 
-    type Item = 
-        { Description: string; Priority: Priority; Completed: bool }
+type View = XAML<"TodoList.xaml">
 
-    type Model = { Title: string; Items: Item list }
+type Priority =
+    | Low
+    | Medium
+    | High
 
-    type Msg =
-        | Add of Item
-        | Remove of Item
-        | Update of oldItem: Item * newItem: Item
+type Item = 
+    { Description: string; Priority: Priority; Completed: bool }
 
+type Model = { Title: string; Items: Item list }
+
+type Msg =
+    | Add of Item
+    | Remove of Item
+    | Update of oldItem: Item * newItem: Item
+
+module Elm =
     let init() = { 
         Title = "" 
         Items = 

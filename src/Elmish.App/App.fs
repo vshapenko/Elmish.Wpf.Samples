@@ -1,4 +1,6 @@
-﻿module App
+﻿namespace Elmish.App
+
+module App =
     open System
     open Elmish
     open Elmish.WPF
@@ -8,5 +10,5 @@
 
     [<EntryPoint;STAThread>]
     let main argv = 
-        Program.mkSimple TodoList.init TodoList.update TodoList.view
+        Program.mkSimple TodoList.Elm.init TodoList.Elm.update TodoList.Elm.view
         |> Program.runWindow (MainWindow())

@@ -10,7 +10,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".paket", ".paket", "{A55879
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TodoList", "TodoList", "{36020B5E-A0B2-4448-ABC5-4973CB98ED18}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "TodoList", "src\TodoList\TodoList.fsproj", "{136B08ED-35E0-46D3-94FB-59C7A87244AB}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Elmish.App", "src\Elmish.App\Elmish.App.fsproj", "{136B08ED-35E0-46D3-94FB-59C7A87244AB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
