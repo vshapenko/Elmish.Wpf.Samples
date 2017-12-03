@@ -8,9 +8,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".paket", ".paket", "{A55879
 		paket.dependencies = paket.dependencies
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TodoList", "TodoList", "{36020B5E-A0B2-4448-ABC5-4973CB98ED18}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Elmish.TodoList", "src\Elmish.TodoList\Elmish.TodoList.fsproj", "{136B08ED-35E0-46D3-94FB-59C7A87244AB}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Elmish.App", "src\Elmish.App\Elmish.App.fsproj", "{136B08ED-35E0-46D3-94FB-59C7A87244AB}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Elmish.Counters", "src\Elmish.Counters\Elmish.Counters.fsproj", "{5F1903B8-D556-4537-9171-B56D77495463}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -22,12 +22,13 @@ Global
 		{136B08ED-35E0-46D3-94FB-59C7A87244AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{136B08ED-35E0-46D3-94FB-59C7A87244AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{136B08ED-35E0-46D3-94FB-59C7A87244AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F1903B8-D556-4537-9171-B56D77495463}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F1903B8-D556-4537-9171-B56D77495463}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F1903B8-D556-4537-9171-B56D77495463}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F1903B8-D556-4537-9171-B56D77495463}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{136B08ED-35E0-46D3-94FB-59C7A87244AB} = {36020B5E-A0B2-4448-ABC5-4973CB98ED18}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B2E71FC3-7099-4766-87EF-5082C3A8E91C}
