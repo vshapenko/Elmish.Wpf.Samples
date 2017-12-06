@@ -18,10 +18,9 @@
         | Increment -> { model with Count = model.Count + 1 }
         | Decrement -> { model with Count = model.Count - 1 }
     
-    let view = 
-        let binding _ _ = 
-            [ "Count" |> Binding.oneWay (fun m -> m.Count)
-              "Increment" |> Binding.cmd (fun _ m -> Increment)
-              "Decrement" |> Binding.cmd (fun _ m -> Decrement) ]
+    let binding _ _ = 
+        [   "Count" |> Binding.oneWay (fun m -> m.Count)
+            "Increment" |> Binding.cmd (fun _ m -> Increment)
+            "Decrement" |> Binding.cmd (fun _ m -> Decrement) ]
 
-        (binding, View)
+    let view = new View()

@@ -59,6 +59,8 @@
     <Compile Include="AssemblyInfo.fs" />
     <Resource Include="Counter.xaml" />
     <Compile Include="Counter.fs" />
+    <Resource Include="CounterList.xaml" />
+    <Compile Include="CounterList.fs" />
     <Resource Include="MainWindow.xaml" />
     <Compile Include="App.fs" />
   </ItemGroup>

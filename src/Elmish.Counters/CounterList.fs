@@ -2,42 +2,46 @@
 
     open FsXaml
     open Elmish.WPF
+    open System.Collections.ObjectModel
 
     type View = XAML<"CounterList.xaml">
 
-    type Model = Counter.Model list
+    type Model = ObservableCollection<Counter.Model>
 
     type Msg = 
     | Insert
     | Remove
     | Modify of int * Counter.Msg
 
-    let init() : Model =
-        [ Counter.init() ]
+    let init() = 
+        ObservableCollection<Counter.Model>([ Counter.init() ])
 
     let update (msg:Msg) (model:Model) =
         match msg with
         | Insert ->
-            Counter.init() :: model // append to list
+            model.Add(Counter.init()) |> ignore
+            model
         | Remove ->
-            match model with
-            | [] -> []              // list is already empty
-            | x :: rest -> rest     // remove from list
+            match model.Count with
+            | 0 -> model
+            | count -> 
+                model.RemoveAt(count - 1) |> ignore
+                model
         | Modify (pos, counterMsg) ->
             model
+            (* TODO
             |> List.mapi (fun i counterModel ->
                 if i = pos then
                     Counter.update counterMsg counterModel
                 else
                     counterModel)
+            *)
 
-(*
     let view = 
-        let (counterBinding, counterView) = Counter.view
+        let xaml = View()
+        // TODO xaml.Counters.Children.Add(Counter.view) |> ignore
+        xaml
 
-        let binding _ _ = 
-            [ "Insert" |> Binding.cmd (fun _ m -> Insert)
-              "Remove" |> Binding.cmd (fun _ m -> Remove)]
-
-        (binding, View)
-*)
+    let binding _ _ = 
+        [   "Insert" |> Binding.cmd (fun _ m -> Insert)
+            "Remove" |> Binding.cmd (fun _ m -> Remove)]
